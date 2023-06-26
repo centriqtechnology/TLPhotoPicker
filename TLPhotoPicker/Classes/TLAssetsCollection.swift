@@ -246,7 +246,7 @@ public struct TLPHAsset {
             { (data, uti, orientation, info) in
                 do {
                     var data = data
-                    let needConvertLivePhotoToJPG = phAsset.mediaSubtypes.contains(.photoLive) == true && convertLivePhotosToJPG == true
+                    let needConvertLivePhotoToJPG = "image/jpeg" != mimetype.lowercased()
                     if needConvertLivePhotoToJPG {
                         let name = localURL.deletingPathExtension().lastPathComponent
                         localURL.deleteLastPathComponent()
